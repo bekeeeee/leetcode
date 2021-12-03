@@ -1,4 +1,4 @@
-class ListNode {
+export class ListNode {
   val: number;
   next: ListNode | null;
   constructor(val?: number, next?: ListNode | null) {
@@ -6,30 +6,30 @@ class ListNode {
     this.next = next === undefined ? null : next;
   }
 }
-console.log(
-  removeNthFromEnd(
-    new ListNode(
-      1,
-      new ListNode(
-        2,
-        new ListNode(
-          3,
-          new ListNode(
-            4,
-            new ListNode(
-              5,
-              new ListNode(
-                6,
-                new ListNode(7, new ListNode(8, new ListNode(9, null)))
-              )
-            )
-          )
-        )
-      )
-    ),
-    2
-  )
-);
+// console.log(
+//   removeNthFromEnd(
+//     new ListNode(
+//       1,
+//       new ListNode(
+//         2,
+//         new ListNode(
+//           3,
+//           new ListNode(
+//             4,
+//             new ListNode(
+//               5,
+//               new ListNode(
+//                 6,
+//                 new ListNode(7, new ListNode(8, new ListNode(9, null)))
+//               )
+//             )
+//           )
+//         )
+//       )
+//     ),
+//     2
+//   )
+// );
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
   // head = new ListNode(5,new ListNode(3,null))
   let headNode = head;
