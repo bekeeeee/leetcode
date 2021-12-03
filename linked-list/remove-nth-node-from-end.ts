@@ -7,7 +7,7 @@ class ListNode {
   }
 }
 console.log(
-  removeNthFromEndd(
+  removeNthFromEnd(
     new ListNode(
       1,
       new ListNode(
@@ -30,7 +30,7 @@ console.log(
     2
   )
 );
-function removeNthFromEndd(head: ListNode | null, n: number): ListNode | null {
+function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
   // head = new ListNode(5,new ListNode(3,null))
   let headNode = head;
 
