@@ -1,3 +1,5 @@
+import { ListNode } from "../linked-list/remove-nth-node-from-end";
+
 class NodeOfTree<T> {
   value;
   left: NodeOfTree<T> | null;
@@ -49,6 +51,19 @@ class BinarySearchTree<T> {
       } else return current;
     }
   }
+  BFS() {
+    let data: T[] | null = [],
+      queue: NodeOfTree<T>[] | null = [];
+    let node: NodeOfTree<T> | null = this.root;
+    queue.push(node!);
+    while (queue?.length) {
+      node = queue.shift()!;
+      data.push(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return data;
+  }
 }
 
 let tree = new BinarySearchTree<number>();
@@ -57,10 +72,10 @@ tree.insert(7);
 tree.insert(4);
 tree.insert(2);
 
-console.log(tree.find(43));
-console.log(tree.find(5));
-console.log(tree.find(7));
-console.log(tree.find(4));
-console.log(tree.find(2));
-
+// console.log(tree.find(43));
+// console.log(tree.find(5));
+// console.log(tree.find(7));
+// console.log(tree.find(4));
+// console.log(tree.find(2));
+console.log(tree.BFS());
 // console.log(tree);
